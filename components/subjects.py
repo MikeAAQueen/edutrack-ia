@@ -49,3 +49,27 @@ def show_subjects():
                 "credits": st.column_config.NumberColumn("Créditos", format="%d")
             }
         )
+        
+        st.divider()
+        st.subheader("Excluir Disciplina")
+        st.warning("Atenção: Excluir uma disciplina também excluirá todas as tarefas vinculadas a ela.")
+        
+        col_del1, col_del2 = st.columns([3, 1])
+        with col_del1:
+            subject_to_delete = st.selectbox(
+                "Selecione a disciplina para excluir:", 
+                options=df_subjects['id'], 
+                format_func=lambda x: df_subjects[df_subjects['id'] == x]['name'].values[0]
+            )
+        with col_del2:
+            st.write("") # Spacing
+            st.write("")
+            if st.button("🗑️ Excluir", use_container_width=True, type="primary"):
+                with st.spinner("Excluindo..."):
+                    from services.xano import delete_subject
+                    resp = delete_subject(token, subject_to_delete)
+                    if resp["success"]:
+                        st.success("Disciplina excluída com sucesso!")
+                        st.rerun()
+                    else:
+                        st.error(resp["error"])
