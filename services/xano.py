@@ -52,6 +52,40 @@ def authenticate(email, password):
         return {"success": False, "error": f"Erro de conexão com a API: {str(e)}"}
 
 
+def register(name, email, password):
+    """
+    Cadastra o usuário pelo endpoint de signup do Xano.
+    """
+    if not AUTH_API_URL:
+        return {
+            "success": False,
+            "error": "A API de Autenticação não foi configurada no .env!",
+        }
+
+    url = f"{AUTH_API_URL}/auth/signup"
+    payload = {"name": name, "email": email, "password": password}
+
+    try:
+        resp = requests.post(url, json=payload, timeout=10)
+        if resp.status_code in (200, 201):
+            data = resp.json()
+            token = data.get("authToken", "")
+
+            return {
+                "success": True,
+                "token": token,
+                "user": {
+                    "id": 0,
+                    "name": name,
+                    "email": email,
+                },
+            }
+        else:
+             return {"success": False, "error": f"Erro no cadastro: {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão com a API: {str(e)}"}
+
+
 # Retry strategy: wait 2^x * 1 second between each retry, up to 10 seconds, max 4 attempts.
 # Retries on network errors (requests.exceptions.RequestException) or RateLimitException
 def get_retry_decorator():
