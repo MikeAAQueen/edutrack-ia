@@ -144,16 +144,20 @@ def show_tasks():
                                 st.error("Erro ao excluir.")
     
     st.divider()
-    
+
     # Report generation
     st.subheader("Relatórios")
     st.write("Baixe o relatório completo de suas tarefas.")
-    
+
     if st.button("Gerar Relatório PDF"):
-        pdf_bytes = generate_pdf_report(filtered_tasks, st.session_state.get('user_name', 'Estudante'))
+        # Passa todas as tarefas (não apenas o filtrado) e a lista completa de disciplinas
+        all_tasks_df = pd.DataFrame(tasks)
+        if not all_tasks_df.empty:
+            all_tasks_df["subject_name"] = all_tasks_df["subject_id"].map(subject_map)
+        pdf_bytes = generate_pdf_report(all_tasks_df, subjects, st.session_state.get("user_name", "Estudante"))
         st.download_button(
             label="Baixar Arquivo PDF",
             data=pdf_bytes,
-            file_name="relatorio_tarefas.pdf",
+            file_name="relatorio_edutrack.pdf",
             mime="application/pdf"
         )

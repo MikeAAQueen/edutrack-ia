@@ -116,7 +116,7 @@ def fetch_subjects(token):
         if resp.status_code == 200:
             data = resp.json()
             # Mapeia as colunas em português para as chaves em inglês que o app usa
-            return [{"id": d["id"], "name": d.get("nome", ""), "professor": d.get("professor", ""), "credits": d.get("creditos", 0)} for d in data]
+            return [{"id": d["id"], "name": d.get("nome", ""), "professor": d.get("professor", ""), "credits": d.get("creditos", 0), "workload": d.get("carga_horaria", 0), "absences": d.get("faltas", 0)} for d in data]
         else:
             return []
     except requests.exceptions.HTTPError as e:
@@ -169,11 +169,11 @@ def _do_create_subject(url, headers, payload):
         raise RateLimitException("Too Many Requests")
     return resp
 
-def create_subject(token, name, professor, credits):
+def create_subject(token, name, professor, credits, workload):
     url = f"{XANO_API_URL}/disciplinas"
     headers = {"Authorization": f"Bearer {token}"}
     # Envia os dados em português para o Xano
-    payload = {"nome": name, "professor": professor, "creditos": credits}
+    payload = {"nome": name, "professor": professor, "creditos": credits, "carga_horaria": workload, "faltas": 0}
     try:
         resp = _do_create_subject(url, headers, payload)
         if resp.status_code in (200, 201):
@@ -184,6 +184,53 @@ def create_subject(token, name, professor, credits):
     except Exception as e:
         return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
 
+@get_retry_decorator()
+def _do_update_subject(url, headers, payload):
+    resp = requests.post(url, json=payload, headers=headers, timeout=10)
+    if resp.status_code == 404:  # Tenta como PATCH se o POST não existir ou for diferente
+        resp = requests.patch(url, json=payload, headers=headers, timeout=10)
+    if resp.status_code == 429:
+        raise RateLimitException("Too Many Requests")
+    return resp
+
+def update_subject_absences(token, subject_id, absences):
+    url = f"{XANO_API_URL}/disciplinas/{subject_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {"faltas": absences}
+
+    try:
+        resp = _do_update_subject(url, headers, payload)
+
+        if resp.status_code in (200, 201):
+            fetch_subjects.clear()
+            return {"success": True}
+        else:
+            return {
+                "success": False,
+                "error": f"Erro ao atualizar: {resp.status_code} - {resp.text}",
+            }
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+def update_subject(token, subject_id, name, professor, credits, workload):
+    """Atualiza todos os campos editáveis de uma disciplina."""
+    url = f"{XANO_API_URL}/disciplinas/{subject_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {
+        "nome": name,
+        "professor": professor,
+        "creditos": credits,
+        "carga_horaria": workload,
+    }
+    try:
+        resp = _do_update_subject(url, headers, payload)
+        if resp.status_code in (200, 201):
+            fetch_subjects.clear()
+            return {"success": True}
+        else:
+            return {"success": False, "error": f"Erro ao atualizar: {resp.status_code} - {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
 
 @get_retry_decorator()
 def _do_update_task(url, headers, payload):

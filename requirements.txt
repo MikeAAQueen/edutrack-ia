@@ -3,3 +3,6 @@ pandas
 requests
 fpdf
 python-dotenv
+matplotlib
+tenacity
+
