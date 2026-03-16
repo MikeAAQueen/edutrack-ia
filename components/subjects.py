@@ -61,6 +61,10 @@ def show_subjects():
             else:
                 return "🟦 Faltas sob controle"
 
+        def set_absences_callback(subj_id, new_abs):
+            # Using session_state user_token directly here because the callback receives it on execution
+            update_subject_absences(st.session_state.get("user_token"), subj_id, new_abs)
+
         # --- Header Row ---
         h_cols = st.columns([3, 2, 1, 1, 3, 4])
         h_cols[0].markdown("**Nome**")
@@ -70,7 +74,7 @@ def show_subjects():
         # O header de 'Faltas' está alinhado ao centro da sub-coluna do número
         _, faltas_header_col, _ = h_cols[4].columns([1, 2, 1])
         faltas_header_col.markdown(
-            "<div style='text-align:center'><b>Faltas</b></div>", unsafe_allow_html=True
+            "<div class='center-bold'>Faltas</div>", unsafe_allow_html=True
         )
         h_cols[5].markdown("**Status**")
         st.divider()
@@ -87,40 +91,30 @@ def show_subjects():
             row[0].write(subject["name"])
             row[1].write(subject["professor"])
             row[2].markdown(
-                f"<div style='text-align:center; font-size:1.1em; font-weight:bold'>{subject.get('credits', '-')}</div>",
+                f"<div class='center-bold'>{subject.get('credits', '-')}</div>",
                 unsafe_allow_html=True,
             )
             row[3].markdown(
-                f"<div style='text-align:center; font-size:1.1em; font-weight:bold'>{workload}</div>",
+                f"<div class='center-bold'>{workload}</div>",
                 unsafe_allow_html=True,
             )
 
             # Faltas column with − number ＋
             minus_col, num_col, plus_col = row[4].columns([1, 2, 1])
-            if minus_col.button(
-                "−", key=f"minus_{subject_id}", use_container_width=True
-            ):
-                new_abs = max(0, current_abs - 1)
-                resp = update_subject_absences(token, subject_id, new_abs)
-                if resp["success"]:
-                    st.rerun()
-                else:
-                    st.error(resp.get("error", "Erro ao atualizar."))
+            minus_col.button(
+                "−", key=f"minus_{subject_id}", use_container_width=True,
+                on_click=set_absences_callback, args=(subject_id, max(0, current_abs - 1))
+            )
 
             num_col.markdown(
-                f"<div style='text-align:center; font-size:1.1em; padding-top:6px; font-weight:bold'>{current_abs}</div>",
+                f"<div class='center-bold-pad'>{current_abs}</div>",
                 unsafe_allow_html=True,
             )
 
-            if plus_col.button(
-                "＋", key=f"plus_{subject_id}", use_container_width=True
-            ):
-                new_abs = current_abs + 1
-                resp = update_subject_absences(token, subject_id, new_abs)
-                if resp["success"]:
-                    st.rerun()
-                else:
-                    st.error(resp.get("error", "Erro ao atualizar."))
+            plus_col.button(
+                "＋", key=f"plus_{subject_id}", use_container_width=True,
+                on_click=set_absences_callback, args=(subject_id, current_abs + 1)
+            )
 
             row[5].write(risk_text)
 

@@ -11,9 +11,23 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Injetar CSS globalmente
+st.markdown("""
+<style>
+    .auth-title { text-align: center; color: #4CAF50; }
+    .auth-subtitle { text-align: center; }
+    .center-bold { text-align: center; font-size: 1.1em; font-weight: bold; }
+    .center-bold-pad { text-align: center; font-size: 1.1em; padding-top: 6px; font-weight: bold; }
+</style>
+""", unsafe_allow_html=True)
+
 def main():
     if 'authenticated' not in st.session_state:
         st.session_state.authenticated = False
+    if 'user_token' not in st.session_state:
+        st.session_state.user_token = None
+    if 'user_name' not in st.session_state:
+        st.session_state.user_name = 'Estudante'
 
     if not st.session_state.authenticated:
         show_login()

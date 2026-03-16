@@ -84,6 +84,16 @@ def show_tasks():
     if "Concluídas" not in status_filter:
         filtered_tasks = filtered_tasks[filtered_tasks['completed'] == False]
         
+    def on_task_change(task_id, check_key, grade_key):
+        is_completed = st.session_state.get(check_key, False)
+        grade_val = st.session_state.get(grade_key, 0.0)
+        grade_payload = grade_val if grade_val > 0 else None
+        
+        if is_completed:
+            st.balloons()
+            
+        update_task_status(st.session_state.get('user_token'), task_id, is_completed, grade_payload)
+        
     # Map subject names for filtering
     filtered_tasks['subject_name'] = filtered_tasks['subject_id'].map(subject_map)
     filtered_tasks = filtered_tasks[filtered_tasks['subject_name'].isin(subject_filter)]
@@ -106,34 +116,31 @@ def show_tasks():
                     current_grade = row.get('grade')
                     nota_val = float(current_grade) if pd.notna(current_grade) and current_grade is not None else 0.0
                     
-                    new_grade = st.number_input(
+                    grade_key = f"grade_{row['id']}"
+                    check_key = f"check_{row['id']}"
+
+                    st.number_input(
                         "Nota", 
                         min_value=0.0, 
                         max_value=10.0, 
                         value=nota_val, 
                         step=0.5,
-                        key=f"grade_{row['id']}"
+                        key=grade_key,
+                        on_change=on_task_change,
+                        args=(row['id'], check_key, grade_key)
                     )
                     
                 with col3:
                     # Checkbox and Delete
-                    st.write("") # Spacing to align with middle of col1
-                    is_completed = st.checkbox("Concluída", value=row['completed'], key=f"check_{row['id']}")
+                    st.container(height=28, border=False) # Spacing to align with middle of col1
+                    st.checkbox(
+                        "Concluída", 
+                        value=row['completed'], 
+                        key=check_key,
+                        on_change=on_task_change,
+                        args=(row['id'], check_key, grade_key)
+                    )
                     
-                    # Update if changed (Completed or Grade)
-                    if is_completed != row['completed'] or new_grade != nota_val:
-                        with st.spinner("⏳"):
-                            # If checking as completed right now, show balloons
-                            if is_completed and not row['completed']:
-                                st.balloons()
-                                
-                            payload_grade = new_grade if new_grade > 0 else None
-                            resp = update_task_status(token, row['id'], is_completed, payload_grade)
-                            if resp["success"]:
-                                st.rerun()
-                            else:
-                                st.error("Erro ao atualizar.")
-                                
                     if st.button("🗑️", key=f"del_{row['id']}", help="Excluir tarefa"):
                         with st.spinner("Excluindo..."):
                             from services.xano import delete_task

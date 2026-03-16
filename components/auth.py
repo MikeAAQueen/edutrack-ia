@@ -5,8 +5,8 @@ def show_login():
     """
     Renders the login and registration screens.
     """
-    st.markdown("<h1 style='text-align: center; color: #4CAF50;'>EduTrack AI</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>Assistente Educacional Personalizado</h3>", unsafe_allow_html=True)
+    st.markdown("<h1 class='auth-title'>EduTrack AI</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 class='auth-subtitle'>Assistente Educacional Personalizado</h3>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     

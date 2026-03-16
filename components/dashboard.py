@@ -52,7 +52,7 @@ def show_dashboard():
         col_chart1, col_chart2 = st.columns(2)
         
         with col_chart1:
-            st.write("**Distribuição por Status**")
+            st.markdown("**Distribuição por Status**")
             # Pie chart for task status
             status_counts = df_tasks['completed'].map({True: 'Concluída', False: 'Pendente'}).value_counts().reset_index()
             status_counts.columns = ['Status', 'Quantidade']
@@ -68,7 +68,7 @@ def show_dashboard():
             st.plotly_chart(fig_pie, use_container_width=True)
             
         with col_chart2:
-            st.write("**Média de Notas por Disciplina**")
+            st.markdown("**Média de Notas por Disciplina**")
             
             # Ensure 'grade' column exists and is numeric
             if 'grade' in df_merged.columns:
@@ -97,7 +97,7 @@ def show_dashboard():
                  st.info("Ainda não há tarefas avaliadas com notas.")
             
         st.divider()
-        st.write("**Volume de Tarefas por Disciplina**")
+        st.markdown("**Volume de Tarefas por Disciplina**")
         
         # Count tasks per subject
         tasks_per_subject = df_merged.groupby('subject_name')['id'].count().reset_index()
