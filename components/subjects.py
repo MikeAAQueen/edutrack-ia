@@ -10,7 +10,7 @@ from services.xano import (
 
 def show_subjects():
     """
-    Renders the Subjects management screen.
+    Renders the Subjects management screen. 
     """
     st.title("📚 Gerenciar Disciplinas")
 
