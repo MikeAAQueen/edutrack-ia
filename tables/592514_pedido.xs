@@ -1,0 +1,27 @@
+table PEDIDO {
+  auth = false
+
+  schema {
+    int id
+    timestamp created_at?=now {
+      sensitive = true
+    }
+  
+    decimal total?
+    text? nfc_e? filters=trim
+    text? cod_entrega? filters=trim
+    int status_pedido_id?=1 {
+      table = "STATUS_PEDIDO"
+    }
+  
+    int cliente_01_id? {
+      table = "CLIENTE_01"
+    }
+  }
+
+  index = [
+    {type: "primary", field: [{name: "id"}]}
+    {type: "btree", field: [{name: "created_at", op: "desc"}]}
+    {type: "btree|unique", field: [{name: "nfc_e", op: "asc"}]}
+  ]
+}
