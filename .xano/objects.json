@@ -2100,7 +2100,7 @@
     "id": 592489,
     "type": "table",
     "path": "tables/592489_cartaotoknzd.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "987c092b372b36f71039553336925569c8e1adb41acdaa1177caa631281a84d6",
     "original": "dGFibGUgQ0FSVEFPVE9LTlpEIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgdG9rZW4/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBjb2RpZ29jbGllbnRlYXNhYXM/IGZpbHRlcnM9dHJpbQogICAgaW50IGNsaWVudGVfaWQ/IHsKICAgICAgdGFibGUgPSAiQ0xJRU5URV8wMSIKICAgIH0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogIF0KfQ=="
@@ -2109,7 +2109,7 @@
     "id": 592456,
     "type": "table",
     "path": "tables/592456_cep.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "4042ee7090e0e9b08357edd931cf8326c0ff943682e43f1f9b8e2daf575f885b",
     "original": "dGFibGUgQ0VQIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgY2VwPyBmaWx0ZXJzPXRyaW0KICAgIHRleHQgdWY/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBjaWRhZGU/IGZpbHRlcnM9dHJpbQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgICB7dHlwZTogImJ0cmVlfHVuaXF1ZSIsIGZpZWxkOiBbe25hbWU6ICJjZXAiLCBvcDogImFzYyJ9XX0KICBdCn0="
@@ -2118,7 +2118,7 @@
     "id": 603346,
     "type": "table",
     "path": "tables/603346_cep_01.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "9794e782167ec254dd7e1e86f4c78f5a1e9888076259bea331cc5633d930a8dd",
     "original": "dGFibGUgQ0VQXzAxIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgY2VwPyBmaWx0ZXJzPXRyaW0KICAgIHRleHQgdWY/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBjaWRhZGU/IGZpbHRlcnM9dHJpbQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImdpbiIsIGZpZWxkOiBbe25hbWU6ICJ4ZG8iLCBvcDogImpzb25iX3BhdGhfb3AifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNlcCIsIG9wOiAiYXNjIn1dfQogIF0KfQ=="
@@ -2127,7 +2127,7 @@
     "id": 592422,
     "type": "table",
     "path": "tables/592422_cliente.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "7248e9b029f0f04f98187d9e85fb00dc3ad0adcb635bd75e2b3999619bde4db3",
     "original": "dGFibGUgQ0xJRU5URSB7CiAgYXV0aCA9IHRydWUKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgbm9tZT8gZmlsdGVycz10cmltCiAgICB0ZXh0IGNlbHVsYXI/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBjcGY/IGZpbHRlcnM9dHJpbQogICAgaW50IHN0YXR1c19jbGllbnRlX2lkPz0xIHsKICAgICAgdGFibGUgPSAiU1RBVFVTX0NMSUVOVEUiCiAgICB9CiAgCiAgICBpbnQgdXNlcl9pZD8gewogICAgICB0YWJsZSA9ICJVU0VSIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgICB7dHlwZTogImJ0cmVlfHVuaXF1ZSIsIGZpZWxkOiBbe25hbWU6ICJjcGYiLCBvcDogImFzYyJ9XX0KICBdCn0="
@@ -2136,7 +2136,7 @@
     "id": 603344,
     "type": "table",
     "path": "tables/603344_cliente_01.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "7a850463909efa44c7d6fd8bb2645fa30ddc8fda80ec440dce4cc70cd1a10caa",
     "original": "dGFibGUgQ0xJRU5URV8wMSB7CiAgYXV0aCA9IHRydWUKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIGludD8gdXNlcl9pZD8gewogICAgICB0YWJsZSA9ICJ1c2VyIgogICAgfQogIAogICAgdGV4dCBjZWx1bGFyIGZpbHRlcnM9dHJpbQogICAgZW1haWwgZW1haWw/IGZpbHRlcnM9dHJpbXxsb3dlcgogICAgdGV4dCBjb2RfdmVyaWY/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBjcGY/IGZpbHRlcnM9dHJpbQogICAgaW50IHN0YXR1c19jbGllbnRlXzAxX2lkPz0xIHsKICAgICAgdGFibGUgPSAiU1RBVFVTX0NMSUVOVEVfMDEiCiAgICB9CiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiZ2luIiwgZmllbGQ6IFt7bmFtZTogInhkbyIsIG9wOiAianNvbmJfcGF0aF9vcCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICAgIHt0eXBlOiAiYnRyZWV8dW5pcXVlIiwgZmllbGQ6IFt7bmFtZTogInVzZXJfaWQiLCBvcDogImFzYyJ9XX0KICBdCn0="
@@ -2145,7 +2145,7 @@
     "id": 760296,
     "type": "table",
     "path": "tables/760296_disciplinas.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "d15eb4c21ce11f091168fe3def625bc6b21750e9945afdcb7eaedd1c99a07019",
     "original": "dGFibGUgZGlzY2lwbGluYXMgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgdGV4dCBub21lPyBmaWx0ZXJzPXRyaW0KICAgIHRleHQgcHJvZmVzc29yPyBmaWx0ZXJzPXRyaW0KICAgIGludCBjcmVkaXRvcz8KICAgIGludCB1c2VyX2lkPyB7CiAgICAgIHRhYmxlID0gInVzZXIiCiAgICB9CiAgCiAgICBpbnQgY2FyZ2FfaG9yYXJpYT8KICAgIGludCBmYWx0YXM/CiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICBdCn0="
@@ -2154,7 +2154,7 @@
     "id": 592453,
     "type": "table",
     "path": "tables/592453_endereco.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "3c4bfe08d35c59e8fa6a34d6d510c92b56b48cf46e65234e3548858230b9d35c",
     "original": "dGFibGUgRU5ERVJFQ08gewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgaW50PyBjbGllbnRlX2lkPyB7CiAgICAgIHRhYmxlID0gIkNMSUVOVEUiCiAgICB9CiAgCiAgICB0ZXh0IGxvZ3JhZG91cm8/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBudW1lcm8/IGZpbHRlcnM9dHJpbQogICAgdGV4dD8gY29tcGxlbWVudG8/IGZpbHRlcnM9dHJpbQogICAgdGV4dD8gcmVmZXJlbmNpYT8gZmlsdGVycz10cmltCiAgICBib29sIHBhZHJhbz8KICAgIGludCBjZXBfaWQ/IHsKICAgICAgdGFibGUgPSAiQ0VQIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgICB7CiAgICAgIHR5cGUgOiAiYnRyZWV8dW5pcXVlIgogICAgICBmaWVsZDogW3tuYW1lOiAiY2xpZW50ZV9pZCIsIG9wOiAiYXNjIn1dCiAgICB9CiAgXQp9"
@@ -2163,7 +2163,7 @@
     "id": 603347,
     "type": "table",
     "path": "tables/603347_endereco_01.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "4e04a134dd9da1cc510895b15fa7344881180c88942ed98b4e9650ef92820257",
     "original": "dGFibGUgRU5ERVJFQ09fMDEgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgaW50IGNsaWVudGVfaWQ/IHsKICAgICAgdGFibGUgPSAiQ0xJRU5URV8wMSIKICAgIH0KICAKICAgIHRleHQgbG9ncmFkb3Vybz8gZmlsdGVycz10cmltCiAgICB0ZXh0IG51bWVybz8gZmlsdGVycz10cmltCiAgICB0ZXh0IGNvbXBsZW1lbnRvPyBmaWx0ZXJzPXRyaW0KICAgIHRleHQgYmFpcnJvPyBmaWx0ZXJzPXRyaW0KICAgIHRleHQgcmVmZXJlbmNpYT8gZmlsdGVycz10cmltCiAgICBpbnQgY2VwX2lkPyB7CiAgICAgIHRhYmxlID0gIkNFUF8wMSIKICAgIH0KICAKICAgIGJvb2wgcGFkcmFvPwogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImdpbiIsIGZpZWxkOiBbe25hbWU6ICJ4ZG8iLCBvcDogImpzb25iX3BhdGhfb3AifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgXQp9"
@@ -2172,7 +2172,7 @@
     "id": 622385,
     "type": "table",
     "path": "tables/622385_faq.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "557d82fcf20b95e848c2919f9f386c7000ff942a854f1ea892bbf0a2c69254b0",
     "original": "dGFibGUgRkFRIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgcGVyZ3VudGE/IGZpbHRlcnM9dHJpbQogICAgdGV4dCByZXNwb3N0YT8gZmlsdGVycz10cmltCiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICBdCn0="
@@ -2181,7 +2181,7 @@
     "id": 623593,
     "type": "table",
     "path": "tables/623593_feedback.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "6599d8c7e70b3776a4fedc8ab68ea7bdbec0660257e9b580343985894f22b683",
     "original": "dGFibGUgZmVlZGJhY2sgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgdGV4dCBzZW50aW1lbnRvPyBmaWx0ZXJzPXRyaW0KICAgIHRleHQgZGVwb2ltZW50bz8gZmlsdGVycz10cmltCiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICBdCn0="
@@ -2190,7 +2190,7 @@
     "id": 592496,
     "type": "table",
     "path": "tables/592496_item.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "4d3ed4aa1f965856719590d85b62600da120bf1b23cb2d6702a6d05331f8debe",
     "original": "dGFibGUgSVRFTSB7CiAgYXV0aCA9IGZhbHNlCgogIHNjaGVtYSB7CiAgICBpbnQgaWQKICAgIHRpbWVzdGFtcCBjcmVhdGVkX2F0Pz1ub3cgewogICAgICB2aXNpYmlsaXR5ID0gInByaXZhdGUiCiAgICB9CiAgCiAgICBpbnQgcGVkaWRvX2lkPyB7CiAgICAgIHRhYmxlID0gIlBFRElETyIKICAgIH0KICAKICAgIGludD8gcXRkPwogICAgZGVjaW1hbCB2YWxvcl91bml0PwogICAgZGVjaW1hbCBzdWJ0b3RhbD8KICAgIGludCBwcm9kdXRvX2lkPyB7CiAgICAgIHRhYmxlID0gIlBST0RVVE8iCiAgICB9CiAgCiAgICBpbnQgc3RhdHVzX2l0ZW1faWQ/PTMgewogICAgICB0YWJsZSA9ICJTVEFUVVNfSVRFTSIKICAgIH0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogICAgewogICAgICB0eXBlIDogImJ0cmVlfHVuaXF1ZSIKICAgICAgZmllbGQ6IFsKICAgICAgICB7bmFtZTogInByb2R1dG9faWQiLCBvcDogImFzYyJ9CiAgICAgICAge25hbWU6ICJwZWRpZG9faWQiLCBvcDogImFzYyJ9CiAgICAgIF0KICAgIH0KICBdCn0="
@@ -2199,7 +2199,7 @@
     "id": 592560,
     "type": "table",
     "path": "tables/592560_oe.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "4220ba50af1664ec513acbb0a8557a48cf2c26997db3b49106d4a53e6a87d46e",
     "original": "dGFibGUgT0UgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgaW50IHBlZGlkb19pZD8gewogICAgICB0YWJsZSA9ICJQRURJRE8iCiAgICB9CiAgCiAgICBpbnQgc3RhdHVzX29lX2lkPz0xIHsKICAgICAgdGFibGUgPSAiU1RBVFVTX09FIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgXQp9"
@@ -2208,7 +2208,7 @@
     "id": 592558,
     "type": "table",
     "path": "tables/592558_op.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "510d8edca1624da5cbe50716574ca93f22fdaf7ccaca836491595f150c6edcc0",
     "original": "dGFibGUgT1AgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgaW50IHBlZGlkb19pZD8gewogICAgICB0YWJsZSA9ICJQRURJRE8iCiAgICB9CiAgCiAgICBpbnQgc3RhdHVzX29wX2lkPz0xIHsKICAgICAgdGFibGUgPSAiU1RBVFVTX09QIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgXQp9"
@@ -2217,7 +2217,7 @@
     "id": 592300,
     "type": "table",
     "path": "tables/592300_papel.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "7bcca5f94edbf424ad4adc83df9c638ac8b1d1c46d4173f490fc0dc4b1e16d40",
     "original": "dGFibGUgUEFQRUwgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgdGV4dCBwYXBlbD8gZmlsdGVycz10cmltCiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICAgIHt0eXBlOiAiYnRyZWV8dW5pcXVlIiwgZmllbGQ6IFt7bmFtZTogInBhcGVsIiwgb3A6ICJhc2MifV19CiAgXQp9"
@@ -2226,7 +2226,7 @@
     "id": 603345,
     "type": "table",
     "path": "tables/603345_papel_01.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "994a89eebf48ee4ac22e874ae4f72d9652593d35240d13c6490bc09e43d9a459",
     "original": "Ly8gUGFwZWwgZG8gVXN1w6FyaW8uIFBvciBleGVtcGxvLCBBZG0sIENvemluaGVpcm8sIEF0ZW5kZW50ZSwgZXRjLgp0YWJsZSBQQVBFTF8wMSB7CiAgYXV0aCA9IGZhbHNlCgogIHNjaGVtYSB7CiAgICBpbnQgaWQKICAgIHRpbWVzdGFtcCBjcmVhdGVkX2F0Pz1ub3cgewogICAgICB2aXNpYmlsaXR5ID0gInByaXZhdGUiCiAgICB9CiAgCiAgICB0ZXh0IHBhcGVsIGZpbHRlcnM9dHJpbQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImdpbiIsIGZpZWxkOiBbe25hbWU6ICJ4ZG8iLCBvcDogImpzb25iX3BhdGhfb3AifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgXQp9"
@@ -2235,7 +2235,7 @@
     "id": 592514,
     "type": "table",
     "path": "tables/592514_pedido.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "5159aa20c2c3834a0bb391b73e31908b8ce2b22e3481e22d52240bdaa18623eb",
     "original": "dGFibGUgUEVESURPIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIGRlY2ltYWwgdG90YWw/CiAgICB0ZXh0PyBuZmNfZT8gZmlsdGVycz10cmltCiAgICB0ZXh0PyBjb2RfZW50cmVnYT8gZmlsdGVycz10cmltCiAgICBpbnQgc3RhdHVzX3BlZGlkb19pZD89MSB7CiAgICAgIHRhYmxlID0gIlNUQVRVU19QRURJRE8iCiAgICB9CiAgCiAgICBpbnQgY2xpZW50ZV8wMV9pZD8gewogICAgICB0YWJsZSA9ICJDTElFTlRFXzAxIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgICB7dHlwZTogImJ0cmVlfHVuaXF1ZSIsIGZpZWxkOiBbe25hbWU6ICJuZmNfZSIsIG9wOiAiYXNjIn1dfQogIF0KfQ=="
@@ -2244,7 +2244,7 @@
     "id": 592397,
     "type": "table",
     "path": "tables/592397_produto.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "1c1d4a44f3fa1a2901c0119f615fa5e225369e095408c0cbacfce2850fb86845",
     "original": "dGFibGUgUFJPRFVUTyB7CiAgYXV0aCA9IGZhbHNlCgogIHNjaGVtYSB7CiAgICBpbnQgaWQKICAgIHRpbWVzdGFtcCBjcmVhdGVkX2F0Pz1ub3cgewogICAgICB2aXNpYmlsaXR5ID0gInByaXZhdGUiCiAgICB9CiAgCiAgICB0ZXh0IG5vbWU/IGZpbHRlcnM9dHJpbQogICAgdGV4dCBkZXNjcmljYW8/IGZpbHRlcnM9dHJpbQogICAgaW50IHF0ZF9kaXNwPwogICAgZGVjaW1hbCBwcmVjbz8KICAgIGltYWdlPyBpbWFnZW0/CiAgICBib29sIHByZWNpc2FfcHJvZHV6aXI/CiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICAgIHt0eXBlOiAiYnRyZWV8dW5pcXVlIiwgZmllbGQ6IFt7bmFtZTogIm5vbWUiLCBvcDogImFzYyJ9XX0KICBdCn0="
@@ -2253,7 +2253,7 @@
     "id": 592579,
     "type": "table",
     "path": "tables/592579_solcancelamento.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "377f3f62021ed0010561e0a2744689c183ff7f06b948a9cf683d02fc3933e179",
     "original": "dGFibGUgU09MQ0FOQ0VMQU1FTlRPIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgbW90aXZvPyBmaWx0ZXJzPXRyaW0KICAgIGludCBwZWRpZG9faWQ/IHsKICAgICAgdGFibGUgPSAiUEVESURPIgogICAgfQogIAogICAgaW50PyBzdGF0dXNfc29sY2FuY2VsYW1lbnRvX2lkPz0xIHsKICAgICAgdGFibGUgPSAiU1RBVFVTX1NPTENBTkNFTEFNRU5UTyIKICAgIH0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogIF0KfQ=="
@@ -2271,7 +2271,7 @@
     "id": 603343,
     "type": "table",
     "path": "tables/603343_status_cliente_01.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "ca1e838435fd7408284061a1c8602b6ee617ec56213d45b3c006861c47143a12",
     "original": "dGFibGUgU1RBVFVTX0NMSUVOVEVfMDEgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgLy8gRXN0YWRvIGRhIFNvbGljaXRhw6fDo28gZGUgQ2FuY2VsYW1lbnRvLgogICAgdGV4dCBzdGF0dXMgZmlsdGVycz10cmltCiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiZ2luIiwgZmllbGQ6IFt7bmFtZTogInhkbyIsIG9wOiAianNvbmJfcGF0aF9vcCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICAgIHt0eXBlOiAiYnRyZWV8dW5pcXVlIiwgZmllbGQ6IFt7bmFtZTogInN0YXR1cyIsIG9wOiAiYXNjIn1dfQogIF0KfQ=="
@@ -2280,7 +2280,7 @@
     "id": 592270,
     "type": "table",
     "path": "tables/592270_status_item.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "cd71ea780ff8a0076f0a5b0ef0ccee6935999ce91935d74caccf3d764d55c569",
     "original": "dGFibGUgU1RBVFVTX0lURU0gewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgdGV4dCBzdGF0dXM/IGZpbHRlcnM9dHJpbQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgICB7dHlwZTogImJ0cmVlfHVuaXF1ZSIsIGZpZWxkOiBbe25hbWU6ICJzdGF0dXMiLCBvcDogImFzYyJ9XX0KICBdCn0="
@@ -2289,7 +2289,7 @@
     "id": 592272,
     "type": "table",
     "path": "tables/592272_status_oe.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "b00330ae60a7f0a8f0d5107473170192c91ed9782b31d5bc3a0311c775b75a1c",
     "original": "dGFibGUgU1RBVFVTX09FIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgc3RhdHVzPyBmaWx0ZXJzPXRyaW0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogICAge3R5cGU6ICJidHJlZXx1bmlxdWUiLCBmaWVsZDogW3tuYW1lOiAic3RhdHVzIiwgb3A6ICJhc2MifV19CiAgXQp9"
@@ -2298,7 +2298,7 @@
     "id": 592413,
     "type": "table",
     "path": "tables/592413_status_op.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "a1796f64e952dc00f767f8eb9279170dc6ffaa688c68e3a8eefea27a795d6b0b",
     "original": "dGFibGUgU1RBVFVTX09QIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgc3RhdHVzPyBmaWx0ZXJzPXRyaW0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogICAge3R5cGU6ICJidHJlZXx1bmlxdWUiLCBmaWVsZDogW3tuYW1lOiAic3RhdHVzIiwgb3A6ICJhc2MifV19CiAgXQp9"
@@ -2316,7 +2316,7 @@
     "id": 592274,
     "type": "table",
     "path": "tables/592274_status_solcancelamento.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "6b8bb2e4b97e2d1c80dbee8f17f3220b63df1b5da70fbdb5736de050266280f9",
     "original": "dGFibGUgU1RBVFVTX1NPTENBTkNFTEFNRU5UTyB7CiAgYXV0aCA9IGZhbHNlCgogIHNjaGVtYSB7CiAgICBpbnQgaWQKICAgIHRpbWVzdGFtcCBjcmVhdGVkX2F0Pz1ub3cgewogICAgICB2aXNpYmlsaXR5ID0gInByaXZhdGUiCiAgICB9CiAgCiAgICB0ZXh0IHN0YXR1cz8gZmlsdGVycz10cmltCiAgfQoKICBpbmRleCA9IFsKICAgIHt0eXBlOiAicHJpbWFyeSIsIGZpZWxkOiBbe25hbWU6ICJpZCJ9XX0KICAgIHt0eXBlOiAiYnRyZWUiLCBmaWVsZDogW3tuYW1lOiAiY3JlYXRlZF9hdCIsIG9wOiAiZGVzYyJ9XX0KICAgIHt0eXBlOiAiYnRyZWV8dW5pcXVlIiwgZmllbGQ6IFt7bmFtZTogInN0YXR1cyIsIG9wOiAiYXNjIn1dfQogIF0KfQ=="
@@ -2325,7 +2325,7 @@
     "id": 592288,
     "type": "table",
     "path": "tables/592288_status_testorno.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "969cfe8ec0389b0114581860ca3f7b74c1c98be2697c26b33e551f085865f7f8",
     "original": "dGFibGUgU1RBVFVTX1RFU1RPUk5PIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgc3RhdHVzPyBmaWx0ZXJzPXRyaW0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogICAge3R5cGU6ICJidHJlZXx1bmlxdWUiLCBmaWVsZDogW3tuYW1lOiAic3RhdHVzIiwgb3A6ICJhc2MifV19CiAgXQp9"
@@ -2352,7 +2352,7 @@
     "id": 760285,
     "type": "table",
     "path": "tables/760285_tarefas.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "2ad66ed920bf24a726a91bd0515f242ebcb547cac9faccea55852b3e9bd3d334",
     "original": "dGFibGUgdGFyZWZhcyB7CiAgYXV0aCA9IGZhbHNlCgogIHNjaGVtYSB7CiAgICBpbnQgaWQKICAgIHRpbWVzdGFtcCBjcmVhdGVkX2F0Pz1ub3cgewogICAgICB2aXNpYmlsaXR5ID0gInByaXZhdGUiCiAgICB9CiAgCiAgICBpbnQgZGlzY2lwbGluYXNfaWQ/IHsKICAgICAgdGFibGUgPSAiZGlzY2lwbGluYXMiCiAgICB9CiAgCiAgICB0ZXh0IHRpdHVsbz8gZmlsdGVycz10cmltCiAgICBkYXRlPyBkYXRhX2VudHJlZ2E/CiAgICBib29sIGNvbXBsZXRhZG8/CiAgICBkZWNpbWFsIG5vdGE/CiAgICBpbnQgdXNlcl9pZD8gewogICAgICB0YWJsZSA9ICJ1c2VyIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgXQp9"
@@ -2361,7 +2361,7 @@
     "id": 592581,
     "type": "table",
     "path": "tables/592581_testorno.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "fce26babf23c7f91908bf755e7427aa1bf26c9c799cafa2a38900f0497db2810",
     "original": "dGFibGUgVEVTVE9STk8gewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgZGVjaW1hbCB2YWxvcj8KICAgIGludCBzb2xjYW5jZWxhbWVudG9faWQ/IHsKICAgICAgdGFibGUgPSAiU09MQ0FOQ0VMQU1FTlRPIgogICAgfQogIAogICAgaW50IHN0YXR1c190ZXN0b3Jub19pZD89MSB7CiAgICAgIHRhYmxlID0gIlNUQVRVU19URVNUT1JOTyIKICAgIH0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogIF0KfQ=="
@@ -2370,7 +2370,7 @@
     "id": 597821,
     "type": "table",
     "path": "tables/597821_tokens.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "ca9cd3b73279cdfc5c3210bcbf475a72a9873d7e227ca56a144f168c270daa9a",
     "original": "dGFibGUgdG9rZW5zIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgcGxhdGFmb3JtYT8gZmlsdGVycz10cmltCiAgICB0ZXh0IHRva2VuPyBmaWx0ZXJzPXRyaW0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogIF0KfQ=="
@@ -2379,7 +2379,7 @@
     "id": 610410,
     "type": "table",
     "path": "tables/610410_tokens_01.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "2828b3bcbf1588c1c2675187f9afdd249a2c1369f91098a48b3f52083eb2186f",
     "original": "Ly8gVG9rZW5zIGRlIEFjZXNzbwp0YWJsZSB0b2tlbnNfMDEgewogIGF1dGggPSBmYWxzZQoKICBzY2hlbWEgewogICAgaW50IGlkCiAgICB0aW1lc3RhbXAgY3JlYXRlZF9hdD89bm93IHsKICAgICAgdmlzaWJpbGl0eSA9ICJwcml2YXRlIgogICAgfQogIAogICAgdGV4dCBwbGF0YWZvcm1hIGZpbHRlcnM9dHJpbQogICAgdGV4dCB0b2tlbiBmaWx0ZXJzPXRyaW0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogIF0KfQ=="
@@ -2397,7 +2397,7 @@
     "id": 592466,
     "type": "table",
     "path": "tables/592466_ttokenizacao.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "253c0d92e7ff24251fdc0d40232217e38cae35d4228474606dbc08e4f39c6f60",
     "original": "dGFibGUgVFRPS0VOSVpBQ0FPIHsKICBhdXRoID0gZmFsc2UKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQ/IGRldF9jYXJ0YW9fZW5jcmlwdD8gZmlsdGVycz10cmltCiAgICBpbnQgc3RhdHVzX3R0b2tlbml6YWNhb19pZD89MSB7CiAgICAgIHRhYmxlID0gIlNUQVRVU19UVE9LRU5JWkFDQU8iCiAgICB9CiAgCiAgICBpbnQgY2xpZW50ZV9pZD8gewogICAgICB0YWJsZSA9ICJDTElFTlRFXzAxIgogICAgfQogIH0KCiAgaW5kZXggPSBbCiAgICB7dHlwZTogInByaW1hcnkiLCBmaWVsZDogW3tuYW1lOiAiaWQifV19CiAgICB7dHlwZTogImJ0cmVlIiwgZmllbGQ6IFt7bmFtZTogImNyZWF0ZWRfYXQiLCBvcDogImRlc2MifV19CiAgXQp9"
@@ -2415,7 +2415,7 @@
     "id": 603342,
     "type": "table",
     "path": "tables/603342_user.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "30412b3438f9e5719b73a154c606e3f17577f9a12e17ee4499269f43e2416ebe",
     "original": "dGFibGUgdXNlciB7CiAgYXV0aCA9IHRydWUKCiAgc2NoZW1hIHsKICAgIGludCBpZAogICAgdGltZXN0YW1wIGNyZWF0ZWRfYXQ/PW5vdyB7CiAgICAgIHZpc2liaWxpdHkgPSAicHJpdmF0ZSIKICAgIH0KICAKICAgIHRleHQgbmFtZSBmaWx0ZXJzPXRyaW0KICAgIGVtYWlsPyBlbWFpbCBmaWx0ZXJzPXRyaW18bG93ZXIKICAgIHBhc3N3b3JkPyBwYXNzd29yZCBmaWx0ZXJzPW1pbjo4fG1pbkFscGhhOjF8bWluRGlnaXQ6MSB7CiAgICAgIHZpc2liaWxpdHkgPSAiaW50ZXJuYWwiCiAgICB9CiAgCiAgICBpbnQgcGFwZWxfaWQ/PTcgewogICAgICB0YWJsZSA9ICJQQVBFTF8wMSIKICAgIH0KICB9CgogIGluZGV4ID0gWwogICAge3R5cGU6ICJwcmltYXJ5IiwgZmllbGQ6IFt7bmFtZTogImlkIn1dfQogICAge3R5cGU6ICJidHJlZSIsIGZpZWxkOiBbe25hbWU6ICJjcmVhdGVkX2F0Iiwgb3A6ICJkZXNjIn1dfQogICAge3R5cGU6ICJidHJlZXx1bmlxdWUiLCBmaWVsZDogW3tuYW1lOiAiZW1haWwiLCBvcDogImFzYyJ9XX0KICAgIHt0eXBlOiAiZ2luIiwgZmllbGQ6IFt7bmFtZTogInhkbyIsIG9wOiAianNvbmJfcGF0aF9vcCJ9XX0KICBdCn0="
