@@ -1,6 +1,7 @@
 import streamlit as st
 from components.auth import show_login
 from components.dashboard import show_dashboard
+from components.professors import show_professors
 from components.subjects import show_subjects
 from components.tasks import show_tasks
 
@@ -53,6 +54,7 @@ def main():
     # Navigation
     pages = {
         "Dashboard": show_dashboard,
+        "Professores": show_professors,
         "Disciplinas": show_subjects,
         "Tarefas": show_tasks
     }

@@ -116,7 +116,7 @@ def fetch_subjects(token):
         if resp.status_code == 200:
             data = resp.json()
             # Mapeia as colunas em português para as chaves em inglês que o app usa
-            return [{"id": d["id"], "name": d.get("nome", ""), "professor": d.get("professor", ""), "credits": d.get("creditos", 0), "workload": d.get("carga_horaria", 0), "absences": d.get("faltas", 0)} for d in data]
+            return [{"id": d["id"], "name": d.get("nome", ""), "professor_id": d.get("professores_id"), "credits": d.get("creditos", 0), "workload": d.get("carga_horaria", 0), "absences": d.get("faltas", 0)} for d in data]
         else:
             return []
     except requests.exceptions.HTTPError as e:
@@ -127,6 +127,27 @@ def fetch_subjects(token):
         return []
     except Exception as e:
         st.error(f"Erro de conexão (Disciplinas): Houve instabilidade (Rate Limit ou Rede). Tente novamente em instantes.")
+        return []
+
+
+@st.cache_data(ttl=60)
+def fetch_professors(token):
+    @get_retry_decorator()
+    def _do_fetch():
+        url = f"{XANO_API_URL}/professores"
+        headers = {"Authorization": f"Bearer {token}"}
+        resp = requests.get(url, headers=headers, timeout=10)
+        if resp.status_code == 429:
+            raise RateLimitException("Too Many Requests")
+        resp.raise_for_status()
+        return resp
+    try:
+        resp = _do_fetch()
+        if resp.status_code == 200:
+            data = resp.json()
+            return [{"id": d["id"], "name": d.get("nome", ""), "email": d.get("email", "")} for d in data]
+        return []
+    except Exception:
         return []
 
 
@@ -169,11 +190,11 @@ def _do_create_subject(url, headers, payload):
         raise RateLimitException("Too Many Requests")
     return resp
 
-def create_subject(token, name, professor, credits, workload):
+def create_subject(token, name, professor_id, credits):
     url = f"{XANO_API_URL}/disciplinas"
     headers = {"Authorization": f"Bearer {token}"}
     # Envia os dados em português para o Xano
-    payload = {"nome": name, "professor": professor, "creditos": credits, "carga_horaria": workload, "faltas": 0}
+    payload = {"nome": name, "professores_id": professor_id, "creditos": credits}
     try:
         resp = _do_create_subject(url, headers, payload)
         if resp.status_code in (200, 201):
@@ -212,13 +233,13 @@ def update_subject_absences(token, subject_id, absences):
     except Exception as e:
         return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
 
-def update_subject(token, subject_id, name, professor, credits, workload):
+def update_subject(token, subject_id, name, professor_id, credits, workload):
     """Atualiza todos os campos editáveis de uma disciplina."""
     url = f"{XANO_API_URL}/disciplinas/{subject_id}"
     headers = {"Authorization": f"Bearer {token}"}
     payload = {
         "nome": name,
-        "professor": professor,
+        "professores_id": professor_id,
         "creditos": credits,
         "carga_horaria": workload,
     }
@@ -320,6 +341,53 @@ def delete_task(token, task_id):
         resp = _do_delete(url, headers)
         if resp.status_code in (200, 204):
             fetch_tasks.clear()
+            return {"success": True}
+        else:
+            return {"success": False, "error": f"Falha ao apagar: {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+def create_professor(token, name, email=""):
+    url = f"{XANO_API_URL}/professores"
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {"nome": name, "email": email}
+    try:
+        resp = requests.post(url, json=payload, headers=headers, timeout=10)
+        if resp.status_code in (200, 201):
+            fetch_professors.clear()
+            return {"success": True, "data": resp.json()}
+        else:
+            return {"success": False, "error": f"Falha na criação: {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+def update_professor(token, professor_id, name, email=""):
+    url = f"{XANO_API_URL}/professores/{professor_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {"nome": name, "email": email}
+    try:
+        resp = requests.post(url, json=payload, headers=headers, timeout=10)
+        if resp.status_code == 404:  # Fallback to PATCH if POST is not the update method
+            resp = requests.patch(url, json=payload, headers=headers, timeout=10)
+        
+        if resp.status_code in (200, 201):
+            fetch_professors.clear()
+            fetch_subjects.clear()  # Clear subjects just in case since name might be cached
+            return {"success": True}
+        else:
+            return {"success": False, "error": f"Erro ao atualizar: {resp.status_code} - {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+def delete_professor(token, professor_id):
+    url = f"{XANO_API_URL}/professores/{professor_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        resp = _do_delete(url, headers)
+        if resp.status_code in (200, 204):
+            fetch_professors.clear()
+            # Limpar as disciplinas pois podem ter referências quebradas ou removidas
+            fetch_subjects.clear()
             return {"success": True}
         else:
             return {"success": False, "error": f"Falha ao apagar: {resp.text}"}

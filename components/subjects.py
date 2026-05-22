@@ -5,6 +5,7 @@ from services.xano import (
     create_subject,
     update_subject_absences,
     update_subject,
+    fetch_professors,
 )
 
 
@@ -16,11 +17,19 @@ def show_subjects():
 
     token = st.session_state.get("user_token", "mock_jwt_token_123")
 
+    professors = fetch_professors(token)
+    if not professors:
+        st.warning("Cadastre algum professor primeiro antes de gerenciar disciplinas.")
+        return
+        
+    df_professors = pd.DataFrame(professors)
+    prof_map = dict(zip(df_professors['id'], df_professors['name']))
+
     # Sidebar for adding new subject
     st.sidebar.header("➕ Adicionar Nova")
     with st.sidebar.form("add_subject_form"):
         new_name = st.text_input("Nome da Disciplina")
-        new_professor = st.text_input("Professor(a)")
+        new_professor_name = st.selectbox("Professor(a)", options=list(prof_map.values()))
         new_credits = st.number_input("Créditos", min_value=1, max_value=20, value=4)
         new_workload = st.number_input(
             "Carga Horária (h)", min_value=1, max_value=300, value=60
@@ -28,11 +37,12 @@ def show_subjects():
         submit_btn = st.form_submit_button("Adicionar")
 
         if submit_btn:
-            if not new_name or not new_professor:
+            if not new_name:
                 st.sidebar.warning("Preencha todos os campos obrigatórios.")
             else:
+                new_professor_id = list(prof_map.keys())[list(prof_map.values()).index(new_professor_name)]
                 resp = create_subject(
-                    token, new_name, new_professor, new_credits, new_workload
+                    token, new_name, new_professor_id, new_credits, new_workload
                 )
                 if resp["success"]:
                     st.sidebar.success("Disciplina adicionada com sucesso!")
@@ -89,7 +99,10 @@ def show_subjects():
 
             row = st.columns([3, 2, 1, 1, 3, 4])
             row[0].write(subject["name"])
-            row[1].write(subject["professor"])
+            
+            # Find the professor name using the mapping, fallback to an empty string if not found
+            prof_name = prof_map.get(subject.get("professor_id"), "")
+            row[1].write(prof_name)
             row[2].markdown(
                 f"<div class='center-bold'>{subject.get('credits', '-')}</div>",
                 unsafe_allow_html=True,
@@ -135,7 +148,16 @@ def show_subjects():
         @st.dialog(f"Editar: {selected_row['name']}")
         def edit_dialog():
             edit_name = st.text_input("Nome da Disciplina", value=selected_row["name"])
-            edit_prof = st.text_input("Professor(a)", value=selected_row["professor"])
+            
+            # Find default index for professor
+            current_prof_id = selected_row.get("professor_id")
+            default_index = 0
+            if current_prof_id in prof_map:
+                prof_names = list(prof_map.values())
+                default_index = prof_names.index(prof_map[current_prof_id])
+                
+            edit_prof_name = st.selectbox("Professor(a)", options=list(prof_map.values()), index=default_index)
+            
             edit_cred = st.number_input(
                 "Créditos",
                 min_value=1,
@@ -152,8 +174,9 @@ def show_subjects():
             btn_col1, btn_col2 = st.columns(2)
             if btn_col1.button("OK ✔️", use_container_width=True, type="primary"):
                 with st.spinner("Salvando..."):
+                    edit_prof_id = list(prof_map.keys())[list(prof_map.values()).index(edit_prof_name)]
                     resp = update_subject(
-                        token, selected_id, edit_name, edit_prof, edit_cred, edit_wl
+                        token, selected_id, edit_name, edit_prof_id, edit_cred, edit_wl
                     )
                 if resp["success"]:
                     st.success("Disciplina atualizada!")

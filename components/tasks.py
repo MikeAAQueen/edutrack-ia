@@ -157,11 +157,22 @@ def show_tasks():
     st.write("Baixe o relatório completo de suas tarefas.")
 
     if st.button("Gerar Relatório PDF"):
+        # Buscar professores para associar os nomes
+        from services.xano import fetch_professors
+        professors = fetch_professors(token)
+        prof_map = {p["id"]: p.get("name", "") for p in professors} if professors else {}
+        
+        enriched_subjects = []
+        for s in subjects:
+            s_copy = dict(s)
+            s_copy["professor"] = prof_map.get(s_copy.get("professor_id"), "")
+            enriched_subjects.append(s_copy)
+
         # Passa todas as tarefas (não apenas o filtrado) e a lista completa de disciplinas
         all_tasks_df = pd.DataFrame(tasks)
         if not all_tasks_df.empty:
             all_tasks_df["subject_name"] = all_tasks_df["subject_id"].map(subject_map)
-        pdf_bytes = generate_pdf_report(all_tasks_df, subjects, st.session_state.get("user_name", "Estudante"))
+        pdf_bytes = generate_pdf_report(all_tasks_df, enriched_subjects, st.session_state.get("user_name", "Estudante"))
         st.download_button(
             label="Baixar Arquivo PDF",
             data=pdf_bytes,
