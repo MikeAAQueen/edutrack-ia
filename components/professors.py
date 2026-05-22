@@ -51,6 +51,8 @@ def show_professors():
         st.divider()
         st.subheader("GERENCIAR PROFESSORES")
         
+        st.warning("⚠️ **Atenção**: Excluir um professor também excluirá permanentemente todas as suas **disciplinas e tarefas atreladas** (Deleção em Cascata).")
+        
         selected_id = st.selectbox(
             "Selecione um professor:", 
             options=df_professors['id'], 

@@ -190,11 +190,11 @@ def _do_create_subject(url, headers, payload):
         raise RateLimitException("Too Many Requests")
     return resp
 
-def create_subject(token, name, professor_id, credits):
+def create_subject(token, name, professor_id, credits, workload):
     url = f"{XANO_API_URL}/disciplinas"
     headers = {"Authorization": f"Bearer {token}"}
     # Envia os dados em português para o Xano
-    payload = {"nome": name, "professores_id": professor_id, "creditos": credits}
+    payload = {"nome": name, "professores_id": professor_id, "creditos": credits, "carga_horaria": workload, "faltas": 0}
     try:
         resp = _do_create_subject(url, headers, payload)
         if resp.status_code in (200, 201):
@@ -291,6 +291,15 @@ def _do_delete(url, headers):
     return resp
 
 def delete_subject(token, subject_id):
+    # Cascade delete tasks
+    try:
+        all_tasks = fetch_tasks(token)
+        tasks_to_del = [t for t in all_tasks if t.get("subject_id") == subject_id]
+        for t in tasks_to_del:
+            delete_task(token, t["id"])
+    except Exception:
+        pass # Ignore errors in cascade delete and attempt subject deletion anyway
+        
     url = f"{XANO_API_URL}/disciplinas/{subject_id}"
     headers = {"Authorization": f"Bearer {token}"}
     try:
@@ -380,6 +389,15 @@ def update_professor(token, professor_id, name, email=""):
         return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
 
 def delete_professor(token, professor_id):
+    # Cascade delete subjects
+    try:
+        all_subjects = fetch_subjects(token)
+        subjects_to_del = [s for s in all_subjects if s.get("professor_id") == professor_id]
+        for s in subjects_to_del:
+            delete_subject(token, s["id"])
+    except Exception:
+        pass # Ignore errors in cascade delete and attempt professor deletion anyway
+        
     url = f"{XANO_API_URL}/professores/{professor_id}"
     headers = {"Authorization": f"Bearer {token}"}
     try:
