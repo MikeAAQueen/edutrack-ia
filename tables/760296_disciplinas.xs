@@ -9,7 +9,7 @@ table disciplinas {
   
     text nome? filters=trim
     text professor? filters=trim
-    int creditos?
+
     int user_id? {
       table = "user"
     }

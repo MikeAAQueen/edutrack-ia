@@ -17,7 +17,6 @@ query "disciplinas/{disciplinas_id}" verb=PUT {
       data = {
         nome     : $input.nome
         professor: $input.professor
-        creditos : $input.creditos
       }
     } as $model
   }

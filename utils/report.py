@@ -261,7 +261,7 @@ def generate_pdf_report(tasks_df: pd.DataFrame, subjects: list, user_name: str) 
         pdf.set_font("Arial", "", 10)
         pdf.ln(2)
 
-        stats = (f"Creditos: {s.get('credits','?')}  |  Carga Horaria: {wl}h  |  "
+        stats = (f"Carga Horaria: {wl}h  |  "
                  f"Faltas: {ab}/{int(wl*0.25)} ({perc:.1f}%)  |  Status: {status}")
         pdf.cell(0, 7, _safe(stats), ln=True)
 

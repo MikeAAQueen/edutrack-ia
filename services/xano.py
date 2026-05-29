@@ -116,7 +116,7 @@ def fetch_subjects(token):
         if resp.status_code == 200:
             data = resp.json()
             # Mapeia as colunas em português para as chaves em inglês que o app usa
-            return [{"id": d["id"], "name": d.get("nome", ""), "professor_id": d.get("professores_id"), "credits": d.get("creditos", 0), "workload": d.get("carga_horaria", 0), "absences": d.get("faltas", 0)} for d in data]
+            return [{"id": d["id"], "name": d.get("nome", ""), "professor_id": d.get("professores_id"), "workload": d.get("carga_horaria", 0), "absences": d.get("faltas", 0)} for d in data]
         else:
             return []
     except requests.exceptions.HTTPError as e:
@@ -190,11 +190,11 @@ def _do_create_subject(url, headers, payload):
         raise RateLimitException("Too Many Requests")
     return resp
 
-def create_subject(token, name, professor_id, credits, workload):
+def create_subject(token, name, professor_id, workload):
     url = f"{XANO_API_URL}/disciplinas"
     headers = {"Authorization": f"Bearer {token}"}
     # Envia os dados em português para o Xano
-    payload = {"nome": name, "professores_id": professor_id, "creditos": credits, "carga_horaria": workload, "faltas": 0}
+    payload = {"nome": name, "professores_id": professor_id, "carga_horaria": workload, "faltas": 0}
     try:
         resp = _do_create_subject(url, headers, payload)
         if resp.status_code in (200, 201):
@@ -233,14 +233,13 @@ def update_subject_absences(token, subject_id, absences):
     except Exception as e:
         return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
 
-def update_subject(token, subject_id, name, professor_id, credits, workload):
+def update_subject(token, subject_id, name, professor_id, workload):
     """Atualiza todos os campos editáveis de uma disciplina."""
     url = f"{XANO_API_URL}/disciplinas/{subject_id}"
     headers = {"Authorization": f"Bearer {token}"}
     payload = {
         "nome": name,
         "professores_id": professor_id,
-        "creditos": credits,
         "carga_horaria": workload,
     }
     try:

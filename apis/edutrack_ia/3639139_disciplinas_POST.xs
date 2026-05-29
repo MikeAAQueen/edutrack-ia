@@ -15,7 +15,6 @@ query disciplinas verb=POST {
         created_at: "now"
         nome      : $input.nome
         professor : $input.professor
-        creditos  : $input.creditos
         user_id   : $auth.id
       }
     } as $model

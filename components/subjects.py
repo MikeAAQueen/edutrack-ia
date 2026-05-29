@@ -30,7 +30,6 @@ def show_subjects():
     with st.sidebar.form("add_subject_form"):
         new_name = st.text_input("Nome da Disciplina")
         new_professor_name = st.selectbox("Professor(a)", options=list(prof_map.values()))
-        new_credits = st.number_input("Créditos", min_value=1, max_value=20, value=4)
         new_workload = st.number_input(
             "Carga Horária (h)", min_value=1, max_value=300, value=60
         )
@@ -42,7 +41,7 @@ def show_subjects():
             else:
                 new_professor_id = list(prof_map.keys())[list(prof_map.values()).index(new_professor_name)]
                 resp = create_subject(
-                    token, new_name, new_professor_id, new_credits, new_workload
+                    token, new_name, new_professor_id, new_workload
                 )
                 if resp["success"]:
                     st.sidebar.success("Disciplina adicionada com sucesso!")
@@ -76,17 +75,16 @@ def show_subjects():
             update_subject_absences(st.session_state.get("user_token"), subj_id, new_abs)
 
         # --- Header Row ---
-        h_cols = st.columns([3, 2, 1, 1, 3, 4])
+        h_cols = st.columns([3, 3, 1, 3, 4])
         h_cols[0].markdown("**Nome**")
         h_cols[1].markdown("**Professor(a)**")
-        h_cols[2].markdown("**Créditos**")
-        h_cols[3].markdown("**Carga Horária**")
+        h_cols[2].markdown("**Carga Horária**")
         # O header de 'Faltas' está alinhado ao centro da sub-coluna do número
-        _, faltas_header_col, _ = h_cols[4].columns([1, 2, 1])
+        _, faltas_header_col, _ = h_cols[3].columns([1, 2, 1])
         faltas_header_col.markdown(
             "<div class='center-bold'>Faltas</div>", unsafe_allow_html=True
         )
-        h_cols[5].markdown("**Status**")
+        h_cols[4].markdown("**Status**")
         st.divider()
 
         # --- One row per subject ---
@@ -97,23 +95,19 @@ def show_subjects():
             perc = (current_abs / workload * 100) if workload > 0 else 0
             risk_text = get_risk_status(perc)
 
-            row = st.columns([3, 2, 1, 1, 3, 4])
+            row = st.columns([3, 3, 1, 3, 4])
             row[0].write(subject["name"])
             
             # Find the professor name using the mapping, fallback to an empty string if not found
             prof_name = prof_map.get(subject.get("professor_id"), "")
             row[1].write(prof_name)
             row[2].markdown(
-                f"<div class='center-bold'>{subject.get('credits', '-')}</div>",
-                unsafe_allow_html=True,
-            )
-            row[3].markdown(
                 f"<div class='center-bold'>{workload}</div>",
                 unsafe_allow_html=True,
             )
 
             # Faltas column with − number ＋
-            minus_col, num_col, plus_col = row[4].columns([1, 2, 1])
+            minus_col, num_col, plus_col = row[3].columns([1, 2, 1])
             minus_col.button(
                 "−", key=f"minus_{subject_id}", use_container_width=True,
                 on_click=set_absences_callback, args=(subject_id, max(0, current_abs - 1))
@@ -129,7 +123,7 @@ def show_subjects():
                 on_click=set_absences_callback, args=(subject_id, current_abs + 1)
             )
 
-            row[5].write(risk_text)
+            row[4].write(risk_text)
 
         st.divider()
         st.subheader("GERENCIAR DISCIPLINAS")
@@ -158,12 +152,6 @@ def show_subjects():
                 
             edit_prof_name = st.selectbox("Professor(a)", options=list(prof_map.values()), index=default_index)
             
-            edit_cred = st.number_input(
-                "Créditos",
-                min_value=1,
-                max_value=20,
-                value=int(selected_row["credits"]),
-            )
             edit_wl = st.number_input(
                 "Carga Horária (h)",
                 min_value=1,
@@ -176,7 +164,7 @@ def show_subjects():
                 with st.spinner("Salvando..."):
                     edit_prof_id = list(prof_map.keys())[list(prof_map.values()).index(edit_prof_name)]
                     resp = update_subject(
-                        token, selected_id, edit_name, edit_prof_id, edit_cred, edit_wl
+                        token, selected_id, edit_name, edit_prof_id, edit_wl
                     )
                 if resp["success"]:
                     st.success("Disciplina atualizada!")
