@@ -129,7 +129,7 @@
     "id": 3639144,
     "type": "api_endpoint",
     "path": "apis/edutrack_ia/3639144_disciplinas_disciplinas_id_PUT.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "a45a3e1efe4b33d39ae3d32181bcb127914bb37807588edc31ab0df818a82703",
     "original": "Ly8gVXBkYXRlIGRpc2NpcGxpbmFzIHJlY29yZApxdWVyeSAiZGlzY2lwbGluYXMve2Rpc2NpcGxpbmFzX2lkfSIgdmVyYj1QVVQgewogIGFwaV9ncm91cCA9ICJFZHV0cmFjay1pYSIKICBhdXRoID0gInVzZXIiCgogIGlucHV0IHsKICAgIGludCBkaXNjaXBsaW5hc19pZD8gZmlsdGVycz1taW46MQogICAgZGJsaW5rIHsKICAgICAgdGFibGUgPSAiZGlzY2lwbGluYXMiCiAgICB9CiAgfQoKICBzdGFjayB7CiAgICBkYi5lZGl0IGRpc2NpcGxpbmFzIHsKICAgICAgZmllbGRfbmFtZSA9ICJpZCIKICAgICAgZmllbGRfdmFsdWUgPSAkaW5wdXQuZGlzY2lwbGluYXNfaWQKICAgICAgZGF0YSA9IHsKICAgICAgICBub21lICAgICA6ICRpbnB1dC5ub21lCiAgICAgICAgcHJvZmVzc29yOiAkaW5wdXQucHJvZmVzc29yCiAgICAgICAgY3JlZGl0b3MgOiAkaW5wdXQuY3JlZGl0b3MKICAgICAgfQogICAgfSBhcyAkbW9kZWwKICB9CgogIHJlc3BvbnNlID0gJG1vZGVsCn0="
@@ -147,7 +147,7 @@
     "id": 3639139,
     "type": "api_endpoint",
     "path": "apis/edutrack_ia/3639139_disciplinas_POST.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "2870f6f432c46dc9fe90f9de584c9ad2c971123d916fc450bbb8bb8153786394",
     "original": "Ly8gQWRkIGRpc2NpcGxpbmFzIHJlY29yZApxdWVyeSBkaXNjaXBsaW5hcyB2ZXJiPVBPU1QgewogIGFwaV9ncm91cCA9ICJFZHV0cmFjay1pYSIKICBhdXRoID0gInVzZXIiCgogIGlucHV0IHsKICAgIGRibGluayB7CiAgICAgIHRhYmxlID0gImRpc2NpcGxpbmFzIgogICAgfQogIH0KCiAgc3RhY2sgewogICAgZGIuYWRkIGRpc2NpcGxpbmFzIHsKICAgICAgZGF0YSA9IHsKICAgICAgICBjcmVhdGVkX2F0OiAibm93IgogICAgICAgIG5vbWUgICAgICA6ICRpbnB1dC5ub21lCiAgICAgICAgcHJvZmVzc29yIDogJGlucHV0LnByb2Zlc3NvcgogICAgICAgIGNyZWRpdG9zICA6ICRpbnB1dC5jcmVkaXRvcwogICAgICAgIHVzZXJfaWQgICA6ICRhdXRoLmlkCiAgICAgIH0KICAgIH0gYXMgJG1vZGVsCiAgfQoKICByZXNwb25zZSA9ICRtb2RlbAp9"
@@ -156,7 +156,7 @@
     "id": 3639142,
     "type": "api_endpoint",
     "path": "apis/edutrack_ia/3639142_disciplinas_disciplinas_id_DELETE.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "67c47d8017530315b6072cd74b9961e6069567df3a00cc81a2be4aa72d00b2ca",
     "original": "Ly8gRGVsZXRlIGRpc2NpcGxpbmFzIHJlY29yZApxdWVyeSAiZGlzY2lwbGluYXMve2Rpc2NpcGxpbmFzX2lkfSIgdmVyYj1ERUxFVEUgewogIGFwaV9ncm91cCA9ICJFZHV0cmFjay1pYSIKICBhdXRoID0gInVzZXIiCgogIGlucHV0IHsKICAgIGludCBkaXNjaXBsaW5hc19pZD8gZmlsdGVycz1taW46MQogIH0KCiAgc3RhY2sgewogICAgZGIuZGVsIGRpc2NpcGxpbmFzIHsKICAgICAgZmllbGRfbmFtZSA9ICJpZCIKICAgICAgZmllbGRfdmFsdWUgPSAkaW5wdXQuZGlzY2lwbGluYXNfaWQKICAgIH0KICB9CgogIHJlc3BvbnNlID0gbnVsbAp9"
@@ -255,7 +255,7 @@
     "id": 3624261,
     "type": "api_endpoint",
     "path": "apis/a_pis_customizadas/3624261_disciplinas_disciplinas_id_DELETE.xs",
-    "status": "unchanged",
+    "status": "changed",
     "staged": false,
     "sha256": "5a490bf9a61b889642fbd3d556a0f75549993381f86e5533cea19d5fc9a39c87",
     "original": "Ly8gRGVsZXRlIGRpc2NpcGxpbmFzIHJlY29yZC4KcXVlcnkgImRpc2NpcGxpbmFzL3tkaXNjaXBsaW5hc19pZH0iIHZlcmI9REVMRVRFIHsKICBhcGlfZ3JvdXAgPSAiQVBpcyBDdXN0b21pemFkYXMiCgogIGlucHV0IHsKICAgIGludCBkaXNjaXBsaW5hc19pZD8gZmlsdGVycz1taW46MQogIH0KCiAgc3RhY2sgewogICAgZGIuZGVsIGRpc2NpcGxpbmFzIHsKICAgICAgZmllbGRfbmFtZSA9ICJpZCIKICAgICAgZmllbGRfdmFsdWUgPSAkaW5wdXQuZGlzY2lwbGluYXNfaWQKICAgIH0KICB9CgogIHJlc3BvbnNlID0gbnVsbAp9"

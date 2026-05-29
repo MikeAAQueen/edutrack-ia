@@ -46,27 +46,35 @@ def main():
         show_login()
         st.stop()
     
-    # App Layout (Apenas para usuários autenticados)
+    # Configurando as páginas
+    dashboard_page = st.Page(show_dashboard, title="Dashboard", icon="📊")
+    professors_page = st.Page(show_professors, title="Professores", icon="👨‍🏫")
+    subjects_page = st.Page(show_subjects, title="Disciplinas", icon="📚")
+    tasks_page = st.Page(show_tasks, title="Tarefas", icon="📝")
+    
+    # Roteador nativo oculto (para podermos desenhar a sidebar na ordem que quisermos)
+    pg = st.navigation(
+        [dashboard_page, professors_page, subjects_page, tasks_page],
+        position="hidden"
+    )
+    
+    # Renderizando a Sidebar na ordem correta
     st.sidebar.title("🎓 EduTrack AI")
     st.sidebar.markdown(f"**Bem-vindo, {st.session_state.get('user_name', 'Estudante')}!**")
     st.sidebar.divider()
     
-    # Navigation
-    pages = {
-        "Dashboard": show_dashboard,
-        "Professores": show_professors,
-        "Disciplinas": show_subjects,
-        "Tarefas": show_tasks
-    }
-    
-    selection = st.sidebar.radio("Navegação", list(pages.keys()))
+    st.sidebar.caption("Navegação")
+    st.sidebar.page_link(dashboard_page)
+    st.sidebar.page_link(professors_page)
+    st.sidebar.page_link(subjects_page)
+    st.sidebar.page_link(tasks_page)
     
     # Logout usando callback (melhor prática para evitar re-runs imperativos)
     st.sidebar.divider()
     st.sidebar.button("Logout", on_click=handle_logout, use_container_width=True)
 
     # Render selected page
-    pages[selection]()
+    pg.run()
 
 if __name__ == "__main__":
     main()
