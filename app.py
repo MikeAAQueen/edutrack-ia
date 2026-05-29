@@ -4,6 +4,7 @@ from components.dashboard import show_dashboard
 from components.professors import show_professors
 from components.subjects import show_subjects
 from components.tasks import show_tasks
+from components.notes import show_notes
 
 # Configuração da página DEVE ser o primeiro comando Streamlit
 st.set_page_config(
@@ -51,10 +52,11 @@ def main():
     professors_page = st.Page(show_professors, title="Professores", icon="👨‍🏫")
     subjects_page = st.Page(show_subjects, title="Disciplinas", icon="📚")
     tasks_page = st.Page(show_tasks, title="Tarefas", icon="📝")
+    notes_page = st.Page(show_notes, title="Anotações", icon="🗒️")
     
     # Roteador nativo oculto (para podermos desenhar a sidebar na ordem que quisermos)
     pg = st.navigation(
-        [dashboard_page, professors_page, subjects_page, tasks_page],
+        [dashboard_page, professors_page, subjects_page, tasks_page, notes_page],
         position="hidden"
     )
     
@@ -68,6 +70,7 @@ def main():
     st.sidebar.page_link(professors_page)
     st.sidebar.page_link(subjects_page)
     st.sidebar.page_link(tasks_page)
+    st.sidebar.page_link(notes_page)
     
     # Logout usando callback (melhor prática para evitar re-runs imperativos)
     st.sidebar.divider()

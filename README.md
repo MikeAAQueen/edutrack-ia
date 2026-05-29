@@ -14,3 +14,4 @@ Vai ser web. Ele ira gerenciar suas atividades escolares além de criar gráfico
 - Node.js
 - OpenSpec
 - Xano
+- XanoScript

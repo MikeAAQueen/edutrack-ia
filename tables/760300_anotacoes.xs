@@ -1,4 +1,4 @@
-table disciplinas {
+table anotacoes {
   auth = false
 
   schema {
@@ -7,21 +7,20 @@ table disciplinas {
       sensitive = true
     }
   
-    text nome? filters=trim
-    text professor? filters=trim
-    int user_id? {
-      table = "user"
+    int disciplinas_id? {
+      table = "disciplinas"
     }
   
-    int carga_horaria?
-    int faltas?
-    int professores_id? {
-      table = "professores"
+    text titulo filters=trim
+    text conteudo?
+    int user_id? {
+      table = "user"
     }
   }
 
   index = [
     {type: "primary", field: [{name: "id"}]}
     {type: "btree", field: [{name: "created_at", op: "desc"}]}
+    {type: "btree", field: [{name: "user_id"}]}
   ]
 }

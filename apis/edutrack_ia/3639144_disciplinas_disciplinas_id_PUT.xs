@@ -14,10 +14,7 @@ query "disciplinas/{disciplinas_id}" verb=PUT {
     db.edit disciplinas {
       field_name = "id"
       field_value = $input.disciplinas_id
-      data = {
-        nome     : $input.nome
-        professor: $input.professor
-      }
+      data = {nome: $input.nome, professor: $input.professor}
     } as $model
   }
 

@@ -10,8 +10,9 @@ query "disciplinas/{disciplinas_id}" verb=DELETE {
   stack {
     db.query tarefas {
       where = $db.tarefas.disciplinas_id == $input.disciplinas_id
+      return = {type: "list"}
     } as $tarefas
-
+  
     foreach ($tarefas) {
       each as $tarefa {
         db.del tarefas {
@@ -20,7 +21,7 @@ query "disciplinas/{disciplinas_id}" verb=DELETE {
         }
       }
     }
-
+  
     db.del disciplinas {
       field_name = "id"
       field_value = $input.disciplinas_id

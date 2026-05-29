@@ -70,9 +70,18 @@ def show_subjects():
             else:
                 return "🟦 Faltas sob controle"
 
+        if "local_absences_changes" not in st.session_state:
+            st.session_state.local_absences_changes = {}
+
         def set_absences_callback(subj_id, new_abs):
-            # Using session_state user_token directly here because the callback receives it on execution
-            update_subject_absences(st.session_state.get("user_token"), subj_id, new_abs)
+            st.session_state.local_absences_changes[subj_id] = new_abs
+
+        def save_absences_callback():
+            token = st.session_state.get("user_token")
+            for s_id, new_abs in st.session_state.local_absences_changes.items():
+                update_subject_absences(token, s_id, new_abs)
+            st.session_state.local_absences_changes = {}
+            st.toast("Faltas salvas com sucesso!", icon="✅")
 
         # --- Header Row ---
         h_cols = st.columns([3, 3, 1, 3, 4])
@@ -90,7 +99,8 @@ def show_subjects():
         # --- One row per subject ---
         for subject in subjects:
             subject_id = subject["id"]
-            current_abs = subject.get("absences", 0)
+            db_abs = subject.get("absences", 0)
+            current_abs = st.session_state.local_absences_changes.get(subject_id, db_abs)
             workload = subject.get("workload", 1)
             perc = (current_abs / workload * 100) if workload > 0 else 0
             risk_text = get_risk_status(perc)
@@ -125,6 +135,10 @@ def show_subjects():
 
             row[4].write(risk_text)
 
+        if st.session_state.local_absences_changes:
+            st.markdown("<br/>", unsafe_allow_html=True)
+            st.button("💾 SAVE (Salvar Faltas)", type="primary", use_container_width=True, on_click=save_absences_callback)
+            
         st.divider()
         st.subheader("GERENCIAR DISCIPLINAS")
 

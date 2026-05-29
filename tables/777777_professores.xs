@@ -1,4 +1,4 @@
-table disciplinas {
+table professores {
   auth = false
 
   schema {
@@ -7,17 +7,8 @@ table disciplinas {
       sensitive = true
     }
   
-    text nome? filters=trim
-    text professor? filters=trim
-    int user_id? {
-      table = "user"
-    }
-  
-    int carga_horaria?
-    int faltas?
-    int professores_id? {
-      table = "professores"
-    }
+    text nome filters=trim
+    text email? filters=trim
   }
 
   index = [

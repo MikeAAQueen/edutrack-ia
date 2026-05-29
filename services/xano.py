@@ -410,3 +410,79 @@ def delete_professor(token, professor_id):
             return {"success": False, "error": f"Falha ao apagar: {resp.text}"}
     except Exception as e:
         return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+@st.cache_data(ttl=60)
+def fetch_notes(token):
+    @get_retry_decorator()
+    def _do_fetch():
+        url = f"{XANO_API_URL}/anotacoes"
+        headers = {"Authorization": f"Bearer {token}"}
+        resp = requests.get(url, headers=headers, timeout=10)
+        if resp.status_code == 429:
+            raise RateLimitException("Too Many Requests")
+        resp.raise_for_status()
+        return resp
+
+    try:
+        resp = _do_fetch()
+        if resp.status_code == 200:
+            data = resp.json()
+            return [{"id": t["id"], "subject_id": t.get("disciplinas_id"), "title": t.get("titulo", ""), "content": t.get("conteudo", ""), "created_at": t.get("created_at")} for t in data]
+        else:
+            return []
+    except Exception as e:
+        st.error(f"Erro de conexão (Anotações): Houve instabilidade (Rate Limit ou Rede). Tente novamente em instantes.")
+        return []
+
+def create_note(token, subject_id, title, content):
+    url = f"{XANO_API_URL}/anotacoes"
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {
+        "disciplinas_id": subject_id,
+        "titulo": title,
+        "conteudo": content
+    }
+    
+    try:
+        resp = requests.post(url, json=payload, headers=headers, timeout=10)
+        if resp.status_code in (200, 201):
+            fetch_notes.clear()
+            return {"success": True, "data": resp.json()}
+        else:
+            return {"success": False, "error": f"Falha na criação: {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+def update_note(token, note_id, subject_id, title, content):
+    url = f"{XANO_API_URL}/anotacoes/{note_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {
+        "disciplinas_id": subject_id,
+        "titulo": title,
+        "conteudo": content
+    }
+    
+    try:
+        resp = requests.put(url, json=payload, headers=headers, timeout=10)
+        if resp.status_code == 404:
+            resp = requests.patch(url, json=payload, headers=headers, timeout=10)
+        if resp.status_code in (200, 201):
+            fetch_notes.clear()
+            return {"success": True}
+        else:
+            return {"success": False, "error": f"Erro ao atualizar: {resp.status_code} - {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
+
+def delete_note(token, note_id):
+    url = f"{XANO_API_URL}/anotacoes/{note_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        resp = _do_delete(url, headers)
+        if resp.status_code in (200, 204):
+            fetch_notes.clear()
+            return {"success": True}
+        else:
+            return {"success": False, "error": f"Falha ao apagar: {resp.text}"}
+    except Exception as e:
+        return {"success": False, "error": f"Erro de conexão/Limite de taxa excedido."}
