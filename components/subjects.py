@@ -141,6 +141,8 @@ def show_subjects():
             
         st.divider()
         st.subheader("GERENCIAR DISCIPLINAS")
+        
+        st.warning("⚠️ **Atenção**: Excluir uma disciplina também excluirá permanentemente todas as suas **tarefas atreladas** (Deleção em Cascata).")
 
         selected_id = st.selectbox(
             "Selecione uma disciplina:",
