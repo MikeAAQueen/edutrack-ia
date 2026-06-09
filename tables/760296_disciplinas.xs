@@ -8,7 +8,10 @@ table disciplinas {
     }
   
     text nome? filters=trim
+<<<<<<<
     text professor? filters=trim
+=======
+>>>>>>>
     int user_id? {
       table = "user"
     }

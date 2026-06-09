@@ -25,14 +25,14 @@ def show_notes():
 
     with tab2:
         st.subheader("Nova Anotação")
-        with st.form("add_note_form"):
-            new_title = st.text_input("Título", placeholder="Ex: Resumo para a prova...")
+        with st.form("add_note_form", clear_on_submit=True):
+            new_title = st.text_input("Título", placeholder="Ex: Resumo para a prova...", key="new_note_title")
             
             subject_options = list(subj_map.values())
-            new_subject_name = st.selectbox("Disciplina Vinculada", options=subject_options)
+            new_subject_name = st.selectbox("Disciplina Vinculada", options=subject_options, key="new_note_subject")
             
             # Espaço de texto maior para dar conforto ao estudante
-            new_content = st.text_area("Conteúdo", height=300, placeholder="Escreva suas anotações aqui...")
+            new_content = st.text_area("Conteúdo", height=300, placeholder="Escreva suas anotações aqui...", key="new_note_content")
             
             submit_btn = st.form_submit_button("💾 Salvar Anotação", type="primary", use_container_width=True)
             
