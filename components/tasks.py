@@ -29,7 +29,7 @@ def show_tasks():
     with st.sidebar.form("add_task_form"):
         new_title = st.text_input("Título da Tarefa")
         new_subject_name = st.selectbox("Disciplina", options=list(subject_map.values()))
-        new_due_date = st.date_input("Data de Entrega")
+        new_due_date = st.date_input("Data de Entrega", format="DD/MM/YYYY")
         
         submit_btn = st.form_submit_button("Adicionar Tarefa")
         
@@ -109,7 +109,11 @@ def show_tasks():
                 
                 with col1:
                     st.markdown(f"**{row['title']}**")
-                    st.caption(f"📅 {row['due_date']} | 📚 {row['subject_name']}")
+                    try:
+                        display_date = pd.to_datetime(row['due_date']).strftime("%d/%m/%Y")
+                    except Exception:
+                        display_date = row['due_date']
+                    st.caption(f"📅 {display_date} | 📚 {row['subject_name']}")
                 
                 with col2:
                     # Grade input
