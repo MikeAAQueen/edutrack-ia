@@ -11,15 +11,15 @@ def show_tasks():
     
     token = st.session_state.get('user_token', 'mock_jwt_token_123')
     
-    # Sidebar for adding new task
-    st.sidebar.header("➕ Nova Tarefa")
-    
     tasks = fetch_tasks(token)
     subjects = fetch_subjects(token)
     
     if not subjects:
         st.warning("Cadastre alguma disciplina primeiro.")
         return
+
+    # Sidebar for adding new task
+    st.sidebar.header("➕ Nova Tarefa")
         
     df_tasks = pd.DataFrame(tasks)
     df_subjects = pd.DataFrame(subjects)
