@@ -48,8 +48,10 @@ def show_login():
                 if submit_reg:
                     if not reg_name or not reg_email or not reg_password or not reg_password_confirm:
                         st.warning("Preencha todos os campos do cadastro.")
+                        st.stop()
                     elif reg_password != reg_password_confirm:
                         st.warning("As senhas informadas não coincidem.")
+                        st.stop()
                     else:
                         with st.spinner("Criando conta e autenticando..."):
                             response = register(reg_name, reg_email, reg_password)
