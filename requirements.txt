@@ -6,4 +6,4 @@ python-dotenv
 matplotlib
 tenacity
 watchdog
-
+plotly
