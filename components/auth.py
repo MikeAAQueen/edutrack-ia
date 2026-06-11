@@ -49,6 +49,9 @@ def show_login():
                     if not reg_name or not reg_email or not reg_password or not reg_password_confirm:
                         st.warning("Preencha todos os campos do cadastro.")
                         st.stop()
+                    elif len(reg_password) < 6:
+                        st.warning("A senha deve ter no mínimo 6 caracteres.")
+                        st.stop()
                     elif reg_password != reg_password_confirm:
                         st.warning("As senhas informadas não coincidem.")
                         st.stop()
